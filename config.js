@@ -1,4 +1,4 @@
-const tenantName    = "development365.onmicrosoft.com";
+const tenantName    = "development365";
 const clientID      = "93855400-18d6-45f3-899f-97f6dac877b0";
 const serverPort    = 3000;
 
