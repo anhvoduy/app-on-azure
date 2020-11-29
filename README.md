@@ -1,2 +1,2 @@
-# azure-authenticate
-azure-authenticate
+# app-on-azure
+app-on-azure
