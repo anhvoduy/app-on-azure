@@ -2,7 +2,7 @@
   "name": "app-on-azure",
   "version": "0.0.2",
   "description": "app-on-azure",
-  "main": "app.js",
+  "main": "main.js",
   "author": "voduyanh",
   "license": "ISC",
   "engines": {
