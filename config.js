@@ -37,3 +37,5 @@ exports.useMongoDBSessionStore = false;
 exports.databaseUri = 'mongodb://localhost/OIDCStrategy';
 
 exports.mongoDBSessionMaxAge = 24 * 60 * 60;
+
+exports.secretKey = 'i-love-app-on-azure';
