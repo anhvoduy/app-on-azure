@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { getRandomString } from "@pnp/common";
 import { setup as pnpSetup } from "@pnp/common";
+import { sp } from "@pnp/sp/presets/all";
 
 function App() {
   const [randomString, setRandomString] = useState('');
