@@ -1,22 +1,19 @@
 {
-  "name": "azure-authenticate",
-  "version": "1.0.0",
-  "description": "azure-authenticate",
+  "name": "app-on-azure",
+  "version": "0.0.2",
+  "description": "app-on-azure",
   "main": "app.js",
+  "engines": {
+    "node": "12.15.0",
+    "npm": "6.13.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/devinsg/azure-authenticate.git"
-  },
-  "author": "duyanh",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/devinsg/azure-authenticate/issues"
-  },
-  "homepage": "https://github.com/devinsg/azure-authenticate#readme",
+  },  
+  "author": "voduyanh1984@yahoo.com",
+  "license": "ISC",  
+  "homepage": "https://github.com/anhvoduy/app-on-azure#readme",
   "dependencies": {
     "assert-plus": "*",
     "body-parser": "^1.15.2",
