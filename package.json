@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "app-on-azure",
   "main": "app.js",
-  "author": "voduyanh1984@yahoo.com",
+  "author": "voduyanh",
   "license": "ISC",
   "engines": {
     "node": "8.11.1",
