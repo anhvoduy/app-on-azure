@@ -1,5 +1,5 @@
 const tenantName    = "development365";
-const clientID      = "93855400-xxxx-yyyy-zzzz-97f6dac877b0";
+const clientID      = "93855400-18d6-45f3-899f-97f6dac877b0";
 const serverPort    = 3000;
 
 module.exports.serverPort = serverPort;
@@ -11,7 +11,7 @@ module.exports.credentials = {
   responseMode: 'form_post',
   redirectUrl: 'http://localhost:3000/auth/openid/return',
   allowHttpForRedirectUrl: true,
-  clientSecret: 'clientSecret',
+  clientSecret: 'bbYs/-sndAm/dzo[cMybDB4gFR4EQ6g0',
   validateIssuer: true,
   isB2C: false,
   issuer: null,
