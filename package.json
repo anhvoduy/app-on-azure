@@ -4,17 +4,19 @@
   "description": "app-on-azure",
   "main": "app.js",
   "engines": {
-    "node": "12.15.0",
-    "npm": "6.13.4"
+    "node": "8.11.1",
+    "npm": "5.6.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
-  },  
+  },
   "author": "voduyanh1984@yahoo.com",
-  "license": "ISC",  
+  "license": "ISC",
   "homepage": "https://github.com/anhvoduy/app-on-azure#readme",
   "dependencies": {
+    "@pnp/graph": "^2.0.13",
+    "@pnp/sp": "^2.0.13",
     "assert-plus": "*",
     "body-parser": "^1.15.2",
     "bunyan": "*",
@@ -29,5 +31,11 @@
     "passport": "*",
     "passport-azure-ad": "^3.0.12",
     "restify": "^8.3.3"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.32",
+    "nodemon": "^2.0.6"
   }
 }
