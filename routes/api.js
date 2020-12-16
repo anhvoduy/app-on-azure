@@ -26,10 +26,12 @@ router.post('/status', function (req, res, next) {
 router.get('/sharepoint', async function (req, res, next) {
     try 
     {
-        const data = await baseService.getSiteInfo();
+        const site_info = await baseService.getSiteInfo();
+        const document_info = await baseService.getDocumentList();
         res.json({
             code: true,
-            data: data,
+            site_info: site_info,
+            document_info: document_info,
             version: info.version,
             time: momentTz(new Date()).format('YYYY-MM-DD HH:mm:ss')
         });
