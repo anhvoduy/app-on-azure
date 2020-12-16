@@ -4,4 +4,4 @@ const fnc = {
   client_secret: 'mgJ9PfILUEpJClCeSAF8aEI3oM8ul4GyRm30vaQ7xt4='
 }
 
-module.exports = fnc;
+export default fnc;
