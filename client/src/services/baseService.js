@@ -1,18 +1,42 @@
-const spCommon = require('@pnp/sp-commonjs');
-const nodeCommon = require('@pnp/nodejs-commonjs');
+const fnc = require('./config');
+const sp_common = require('@pnp/sp-commonjs');
+const node_common = require('@pnp/nodejs-commonjs');
 
-const baseService = function() {    
-}
-
-baseService.getData = function() {
-let url = `/getTicketsWithStatus`;
-return fetch(url)
-``.then(res => {
-    const tickets = res.data.data.results;
-    return tickets;
-}).catch(err => {
-    throw err;
+sp_common.sp.setup({
+    sp: {
+        fetchClientFactory: () => {
+            return new node_common.SPFetchClient(fnc.site_url, fnc.client_id, fnc.client_secret);
+        },
+    },
 });
+
+const getSiteInfo = function() {
+    return new Promise(function(resolve, reject) {        
+        sp_common.sp.web.select("Title", "Description").get()
+        .then((data) => {
+            console.log(JSON.stringify(data, null, 4));
+            resolve(data);
+        }, (err) => {
+            console.log('- ERROR:', err);
+            reject(err);
+        });        
+    });
 }
 
-export default baseService;
+const getDocumentList = function() {
+    return new Promise(function(resolve, reject) {        
+        sp_common.sp.web.getList('/sites/develop/Shared%20Documents/').get()
+        .then((data) => {
+            console.log(JSON.stringify(data, null, 4));
+            resolve(data);
+        }, (err) => {
+            console.log('- ERROR:', err);
+            reject(err);
+        });        
+    });
+}
+
+module.exports = {
+    getSiteInfo,
+    getDocumentList
+};
