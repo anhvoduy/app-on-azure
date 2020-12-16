@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import logo from '../../logo.svg';
 import './app.css';
 import { getRandomString } from "@pnp/common";
+import { fetchSPAccessToken } from '../../services/spService';
 
 function App() {
   const [randomString, setRandomString] = useState('');
@@ -9,6 +10,7 @@ function App() {
   useEffect(() => {
     const randomString = getRandomString(22);
     setRandomString(randomString);
+    fetchSPAccessToken();
   }, []);
 
   return (

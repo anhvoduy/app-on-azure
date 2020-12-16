@@ -19,6 +19,13 @@ SharePoint supports four different permission scopes within the content database
 - List              http://sharepoint/content/sitecollection/web/list   When the user who installs the add-in is prompted to grant permissions, the dialog enables the user to select one list to which the add-in is granted permissions.
 
 ### Special Permissions
+# Site Collection:
+<AppPermissionRequests AllowAppOnlyPolicy="true">
+   <AppPermissionRequest Scope="http://sharepoint/content/sitecollection" Right="FullControl"/>
+   <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="FullControl"/>
+</AppPermissionRequests>
+
+
 # Search Service: 
 Because the search service crawls all the data in the tenant, coupled with the fact that users should only see results that they have permissions to access, you cannot use AllowAppOnlyPolicy. Also, there is only one permission scope, QueryAsUserIgnoreAppPrincipal
 - <AppPermissionRequests AllowAppOnlyPolicy="false">  
