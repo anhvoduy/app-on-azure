@@ -1,6 +1,6 @@
-import fnc from './config';
-import sp_common from '@pnp/sp-commonjs';
-import node_common from '@pnp/nodejs-commonjs';
+const fnc = require('./config');
+const sp_common = require('@pnp/sp-commonjs');
+const node_common = require('@pnp/nodejs-commonjs');
 
 sp_common.sp.setup({
     sp: {
@@ -36,7 +36,7 @@ const getDocumentList = function() {
     });
 }
 
-export default {
+module.exports = {
     getSiteInfo,
     getDocumentList
 };
