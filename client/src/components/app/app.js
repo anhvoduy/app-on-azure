@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../../logo.svg';
+import './app.css';
 import { getRandomString } from "@pnp/common";
-import { setup as pnpSetup } from "@pnp/common";
 
 function App() {
   const [randomString, setRandomString] = useState('');

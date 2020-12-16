@@ -16,6 +16,8 @@
   },
   "homepage": "https://github.com/anhvoduy/app-on-azure#readme",
   "dependencies": {
+    "@pnp/nodejs-commonjs": "^2.0.13",
+    "@pnp/sp-commonjs": "^2.0.13",
     "assert-plus": "*",
     "body-parser": "^1.15.2",
     "bunyan": "*",
