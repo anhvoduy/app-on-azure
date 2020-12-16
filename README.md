@@ -21,7 +21,6 @@ SharePoint supports four different permission scopes within the content database
 ### Special Permissions
 # Search Service: 
 Because the search service crawls all the data in the tenant, coupled with the fact that users should only see results that they have permissions to access, you cannot use AllowAppOnlyPolicy. Also, there is only one permission scope, QueryAsUserIgnoreAppPrincipal
-
 <AppPermissionRequests AllowAppOnlyPolicy="false">  
    <AppPermissionRequest Scope="http://sharepoint/search" 
     Right="QueryAsUserIgnoreAppPrincipal" />
