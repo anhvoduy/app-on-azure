@@ -31,7 +31,6 @@ router.get('/sharepoint', async function (req, res, next) {
             code: true,
             data: data,
             version: info.version,
-            web_info: process.env.WEB_INFO,
             time: momentTz(new Date()).format('YYYY-MM-DD HH:mm:ss')
         });
     } catch (err) {
