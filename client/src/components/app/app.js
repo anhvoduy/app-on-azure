@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../../logo.svg';
 import './app.css';
-import { getRandomString } from "@pnp/common";
+import { getAccessToken, getEmployee  } from '../../services/baseService';
 
 function App() {
-  const [randomString, setRandomString] = useState('');
+  const [firstEmployee, setFirstEmployee] = useState(null);
   
-  useEffect(() => {
-    const randomString = getRandomString(22);
-    setRandomString(randomString);
+  useEffect(async () => {
+    getAccessToken();
+    let emp = await getEmployee();    
+    setFirstEmployee(emp);
   }, []);
 
   return (
@@ -16,14 +17,14 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload: {randomString}
+          Edit <code>src/App.js</code> and save to reload: {firstEmployee ? firstEmployee.Title : 'None'}
         </p>
         <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer">
-          Learn React
+          Learn React App
         </a>
       </header>
     </div>
