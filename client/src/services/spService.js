@@ -1,29 +1,35 @@
+import axios from 'axios';
 
-export const fetchSPAccessToken = async () => {
+export const getAccessToken = function() {    
+  return new Promise(function(resolve, reject) {
+      axios('http://localhost:3000/v1/api/access_token')
+      .then(function (res) {
+        console.log(JSON.stringify(res.data));
+        resolve(res.data)
+      })
+      .catch(function (err) {
+        console.log(err);
+        reject(err);
+      });
+  });
+}
+
+export const fetchEmployee = async () => {
   try 
   {
-    let uri = 'https://accounts.accesscontrol.windows.net/d4961f1b-d80d-475b-a3c3-7d09b24bd5d2/tokens/OAuth/2';
+    let uri = "https://development365.sharepoint.com/sites/develop/_api/web/lists/GetByTitle('Employees')/items?$top=10&$expand=AttachmentFiles";
 
     let myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-    myHeaders.append("Cookie", "esctx=AQABAAAAAAB2UyzwtQEKR7-rWbgdcBZItLdIQ-cRCxTTxOZ4UmwsyVOi4cRuc47EunoQM6vGNHYu-aseTWqAumf14zHmXr4qGm8-2j112wYifKA-TiR4hgMpTh4OORvGvF_vid-cvD8QOCzRdzfXUPE6wR_Htuu5ZB8NbHp3arsyXSykTDYsqDQdNl_YiTG4_PTkQtrpJi4gAA; stsservicecookie=estsfd; x-ms-gateway-slice=prod; fpc=AuZzeGFWqKBDlrZ4IDb2__un6GOaBwAAAFzja9cOAAAAybLMgQIAAABc4WvXDgAAANb0UiIBAAAAMuRr1w4AAAA");
-    myHeaders.append("Access-Control-Allow-Origin", "*");
-
-    let urlencoded = new URLSearchParams();
-    urlencoded.append("grant_type", "client_credentials");
-    urlencoded.append("client_id", "5ca2f988-4d5f-49f8-be14-cdc63f0cce99@d4961f1b-d80d-475b-a3c3-7d09b24bd5d2");
-    urlencoded.append("client_secret", "mgJ9PfILUEpJClCeSAF8aEI3oM8ul4GyRm30vaQ7xt4=");
-    urlencoded.append("Resource", "00000003-0000-0ff1-ce00-000000000000/development365.sharepoint.com@d4961f1b-d80d-475b-a3c3-7d09b24bd5d2");
+    myHeaders.append("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IjVPZjlQNUY5Z0NDd0NtRjJCT0hIeEREUS1EayIsImtpZCI6IjVPZjlQNUY5Z0NDd0NtRjJCT0hIeEREUS1EayJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvZGV2ZWxvcG1lbnQzNjUuc2hhcmVwb2ludC5jb21AZDQ5NjFmMWItZDgwZC00NzViLWEzYzMtN2QwOWIyNGJkNWQyIiwiaXNzIjoiMDAwMDAwMDEtMDAwMC0wMDAwLWMwMDAtMDAwMDAwMDAwMDAwQGQ0OTYxZjFiLWQ4MGQtNDc1Yi1hM2MzLTdkMDliMjRiZDVkMiIsImlhdCI6MTYwODE2ODg5NSwibmJmIjoxNjA4MTY4ODk1LCJleHAiOjE2MDgyNTU1OTUsImlkZW50aXR5cHJvdmlkZXIiOiIwMDAwMDAwMS0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDBAZDQ5NjFmMWItZDgwZC00NzViLWEzYzMtN2QwOWIyNGJkNWQyIiwibmFtZWlkIjoiNWNhMmY5ODgtNGQ1Zi00OWY4LWJlMTQtY2RjNjNmMGNjZTk5QGQ0OTYxZjFiLWQ4MGQtNDc1Yi1hM2MzLTdkMDliMjRiZDVkMiIsIm9pZCI6Ijk2MWI5YzM2LTQyYTctNGQ4Yy05ZTg4LTRjMGIxNzczMWYwNiIsInN1YiI6Ijk2MWI5YzM2LTQyYTctNGQ4Yy05ZTg4LTRjMGIxNzczMWYwNiIsInRydXN0ZWRmb3JkZWxlZ2F0aW9uIjoiZmFsc2UifQ.qna2bOeZMQnjYY3VhQ2hOPYycSrIcA0-pRBhEu9aA3Uy9D6Dgn-9aYo83FTEYvfzv1TBHJn-LeWZBqZcbQS3WPkyJzFL_3h3WQx6T8iaVFndnd90IGLglPF0nhVXS74UgObnNQOlNHzHt4Z2ccV98hAvgFqLED2iCnStDOi3EzcaT0kHXnfJczO6Zq-le3sQF4fVyN3IJvlmWdi1Kc3_yoHQYxgNMyGj7LGZQRgeKogEftz7tuMeM6MxynZ0XVhBZhOYRPPCVNczoDedhLX_8hTGKZUl9dRzlcA4R_L59yz2fG1wKZmKEE3BnvCkqP7M1j_e4Vw26eb1VD_F5uWO1Q");
+    myHeaders.append("Accept", "application/json;odata=verbose");    
 
     let requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: urlencoded,
-      redirect: 'follow'
+      method: 'GET',
+      headers: myHeaders
     };
-    fetch(uri, requestOptions)
+    return fetch(uri, requestOptions)
     .then((res) => {
-      console.log(res.text());
+      console.log(res.arrayBuffer());
     })
     .catch((err) => {
       console.log(err);
