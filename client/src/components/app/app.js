@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../../logo.svg';
 import './app.css';
-import { getAccessToken, getEmployee  } from '../../services/api';
+import { getAccessToken, getEmployee  } from '../../services/baseService';
 
 function App() {
   const [firstEmployee, setFirstEmployee] = useState(null);
