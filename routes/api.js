@@ -57,10 +57,10 @@ router.get('/doc_info', async function (req, res, next) {
 router.get('/access_token', async function (req, res, next) {
     try 
     {
-        const token = await authService.getAccessToken();
+        const data = await authService.getAccessToken();
         res.json({
             code: true,
-            token: token,
+            data: data,
             version: info.version,
             time: momentTz(new Date()).format('YYYY-MM-DD HH:mm:ss')
         });
