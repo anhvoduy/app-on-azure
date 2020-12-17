@@ -1,5 +1,5 @@
 const tenantName    = "development365";
-const clientID      = "93855400-18d6-45f3-899f-97f6dac877b0";
+const clientID      = "clientID";
 const serverPort    = 3000;
 
 module.exports.serverPort = serverPort;
@@ -11,15 +11,15 @@ module.exports.credentials = {
   responseMode: 'form_post',
   redirectUrl: 'http://localhost:3000/auth/openid/return',
   allowHttpForRedirectUrl: true,
-  clientSecret: 'bbYs/-sndAm/dzo[cMybDB4gFR4EQ6g0',
+  clientSecret: 'clientSecret',
   validateIssuer: true,
   isB2C: false,
   issuer: null,
   passReqToCallback: false,
   useCookieInsteadOfSession: true,
   cookieEncryptionKeys: [
-    { 'key': '12345678901234567890123456789012', 'iv': '123456789012' },
-    { 'key': 'abcdefghijklmnopqrstuvwxyzabcdef', 'iv': 'abcdefghijkl' }
+    { 'key': 'key', 'iv': 'iv' },
+    { 'key': 'key', 'iv': 'iv' }
   ],
   scope: null,
   loggingLevel: 'info',
