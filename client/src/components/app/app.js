@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../../logo.svg';
 import './app.css';
-import { getAccessToken, getEmployee  } from '../../services/baseService';
+import authService from '../../services/authService';
+import baseService from '../../services/baseService';
 
 function App() {
   const [firstEmployee, setFirstEmployee] = useState(null);
   
-  useEffect(async () => {
-    getAccessToken();
-    let emp = await getEmployee();    
-    setFirstEmployee(emp);
+  useEffect(() => {
+    async function fetchData() {
+      let tokenInfo = await authService.getAccessToken();
+      let { token_type, access_token } = tokenInfo;    
+      let emp = await baseService.getEmployee(token_type, access_token);
+      setFirstEmployee(emp);
+    }
+
+    fetchData();
   }, []);
 
   return (
