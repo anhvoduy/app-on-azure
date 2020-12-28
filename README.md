@@ -1,5 +1,5 @@
-# app-on-azure
-app-on-azure
+# demo-pnp
+(spapp + nodejs + reactjs + pnp): on azure app service
 
 ### link ref
 https://www.kofrimpong.com/how-to-access-sharepoint-using-an-application-context/
