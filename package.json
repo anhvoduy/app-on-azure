@@ -10,7 +10,7 @@
     "npm": "6.13.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "dev": "nodemon main.js",
     "start": "node main.js"
   },
