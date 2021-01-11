@@ -6,8 +6,8 @@
   "author": "voduyanh",
   "license": "ISC",
   "engines": {
-    "node": "10.23.0",
-    "npm": "6.14.8"
+    "node": "12.15.0",
+    "npm": "6.13.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
