@@ -8,7 +8,6 @@ const baseService = function () {
 
 baseService.getEmployee = async function(token_type, access_token) {
   let urlEmp = `${baseUrl}/_api/web/lists/GetByTitle('${employeeList}')/items?$top=10&$expand=AttachmentFiles`;
-  debugger;
   setToken(token_type, access_token);
   return new Promise(function(resolve, reject) {
     api(urlEmp).then(function (res) {                
