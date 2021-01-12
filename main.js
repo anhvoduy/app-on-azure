@@ -3,7 +3,6 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
-const SECRET_KEY = 'i-love-sharepoint';
 
 // setup express
 const app = express();
@@ -14,7 +13,7 @@ app.use(bodyParser.json());
 // setup app
 app.set('port', process.env.PORT || 3000);
 app.set('host', process.env.HOST || 'localhost');
-app.set('secretKey', SECRET_KEY);
+app.set('secretKey', process.env.SECRET_KEY || 'i-love-sharepoint');
 
 // setup api as /v1/api
 app.use('/v1/api', require('./routes/api'));
