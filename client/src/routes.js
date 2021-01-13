@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Home from './components/home';
-import Employee from './components/employee';
-import EmployeeEdit from './components/employeeEdit';
+import Course from './components/course';
+import CourseEdit from './components/courseEdit';
 
 const RouteConfig = function() {
     return (
@@ -13,10 +13,10 @@ const RouteConfig = function() {
                     <Home />
                 </Route>
                 <Route exact path="/course">
-                    <Employee />
+                    <Course />
                 </Route>
                 <Route exact path="/course/:id">
-                    <EmployeeEdit />
+                    <CourseEdit />
                 </Route>
             </Switch>
         </Router>
