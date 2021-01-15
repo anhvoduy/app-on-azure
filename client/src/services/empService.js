@@ -5,7 +5,7 @@ const empService = function() {
 }
 
 empService.status = function() {
-  let url = '/api/connection';
+  let url = '/v1/api/connection';
   return new Promise(function(resolve, reject) {
     api.get(url).then(function(res) {
       let { data } = res;
@@ -17,7 +17,7 @@ empService.status = function() {
 }
 
 empService.getEmployees = function(pageSize, pageIndex) {
-  let url = `/api/employees?pagesize=${pageSize}&pageindex=${pageIndex}`;
+  let url = `/v1/api/employees?pagesize=${pageSize}&pageindex=${pageIndex}`;
   return new Promise(function(resolve, reject) {
     api.get(url).then(function(res) {
       let { data } = res.data;
@@ -29,7 +29,7 @@ empService.getEmployees = function(pageSize, pageIndex) {
 }
 
 empService.getEmployeeByKey = function(key) {
-  let url = `/api/employees/item?emp_key=${key}`;
+  let url = `/v1/api/employees/item?emp_key=${key}`;
   return new Promise(function(resolve, reject) {
     api.get(url).then(function(res) {
       let { data } = res.data;
@@ -42,7 +42,7 @@ empService.getEmployeeByKey = function(key) {
 }
 
 empService.getTeams = function() {
-  let url = '/api/teams';
+  let url = '/v1/api/teams';
   return new Promise(function(resolve, reject) {
     api.get(url).then(function(res) {
       let { data } = res.data;
@@ -60,7 +60,7 @@ empService.getTeams = function() {
 }
 
 empService.updateEmployee = function(emp_key, emp_name) {
-  let url = '/api/employees/item';
+  let url = '/v1/api/employees/item';
   let reqInfo = { emp_key, emp_name };
   return new Promise(function(resolve, reject) {
     api.post(url, reqInfo).then(function(res) {
@@ -73,7 +73,7 @@ empService.updateEmployee = function(emp_key, emp_name) {
 }
 
 empService.assignEmployee = function(emp_key, teamIds) {
-  let url = '/api/employees/assign';
+  let url = '/v1/api/employees/assign';
   let reqInfo = { emp_key, teamIds };
   return new Promise(function(resolve, reject) {
     api.post(url, reqInfo).then(function(res) {

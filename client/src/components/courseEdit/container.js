@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Header from '../base/header';
 import Footer from '../base/footer';
 import FormEdit from './form';
-import baseService from '../../services/baseService';
+import empService from '../../services/empService';
 import { forEach } from 'lodash';
 
 const EditContainer = function() {
@@ -15,10 +15,10 @@ const EditContainer = function() {
   const queryData = useCallback(async function () {
     try
     {
-      let t1 = await baseService.getTeams();
+      let t1 = await empService.getTeams();
       setTeams(t1);
 
-      let empInfo = await baseService.getEmployeeByKey(emp_key);
+      let empInfo = await empService.getEmployeeByKey(emp_key);
       setEmployee(empInfo);      
       
       if(empInfo.TeamIds) {        
@@ -50,9 +50,9 @@ const EditContainer = function() {
         teamIds.push(item.TeamId);
       });
 
-      let res1 = await baseService.updateEmployee(employee.EmployeeKey, employee.EmployeeName);
+      let res1 = await empService.updateEmployee(employee.EmployeeKey, employee.EmployeeName);
 
-      let res2 = await baseService.assignEmployee(employee.EmployeeKey, teamIds);
+      let res2 = await empService.assignEmployee(employee.EmployeeKey, teamIds);
       
       if(res1 && res2) alert('Submit is success!');
     }
