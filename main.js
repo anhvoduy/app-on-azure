@@ -17,6 +17,8 @@ app.set('secretKey', process.env.SECRET_KEY || 'i-love-sharepoint');
 
 // setup api as /v1/api
 app.use('/v1/api', require('./routes/api'));
+app.use('/v1/api/course', require('./routes/course'));
+app.use('/v1/api/employee', require('./routes/employee'));
 
 // setup web site
 const siteApp = path.join(__dirname, 'client/build');
