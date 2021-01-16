@@ -1,0 +1,69 @@
+.employee-page {    
+    position: relative;
+    margin-top: 80px;
+    .bg-dark {
+        background-color: #FF0033 !important;
+    }
+    .row-btn {
+        button.btn.btn-link {
+            padding: 0px;
+        }
+    }
+    .form-full-screen {
+        min-height: calc(100vh - 136px)
+    }
+
+    .row-loading {
+        display: block;
+        text-align: center;
+    }
+
+    #react-paginate ul {
+        display: inline-block;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #react-paginate li {
+        display: inline-block;
+    }
+    .pagination {
+        justify-content: center;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    ul.pagination li {
+        display: inline-block;
+        width: 75px;
+        border: 1px solid #e2e2e2;
+        display: flex;
+        justify-content: center;
+        font-size: 25px;
+    }
+    ul.pagination li a {
+        text-decoration: none;
+        color: #337ab7;
+        font-size: 20px;
+    }      
+    ul.pagination li.active a {
+        color: white;
+    }
+    ul.pagination li.active {
+        background-color: #337ab7;
+    }
+    ul.pagination li a:hover,
+    ul.pagination li a.active {
+        color: blue;
+    }
+    .page-selection {
+        width: 48px;
+        height: 30px;
+        color: #337ab7;
+    }
+    .pagination-wrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }      
+}
