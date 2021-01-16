@@ -16,35 +16,35 @@ Factory.getTransaction = function() {
     });
 }
 
-Factory.updateEmployee = function(tr, emp_key, emp_name) {
+Factory.updateCourse = function(course_key, course_name) {
     let sql = `
-        UPDATE [dbo].[Employee]
-        SET EmployeeName = N'${emp_name}'
-        WHERE EmployeeKey = '${emp_key}'
+        UPDATE [dbo].[Course]
+        SET CourseName = N'${course_name}'
+        WHERE CourseKey = '${course_key}'
     `;
-    return db.raw(sql).transacting(tr);
+    return db.raw(sql);
 }
 
-Factory.assignEmployee = function(tr, emp_key, teamIds) {
+Factory.assignCourse = function(course_key, teamIds) {
     let sql = `
-        UPDATE [dbo].[Employee]
+        UPDATE [dbo].[Course]
         SET TeamIds = N'[${teamIds}]'
-        WHERE EmployeeKey = '${emp_key}'
+        WHERE CourseKey = '${course_key}'
     `;
-    return db.raw(sql).transacting(tr);
+    return db.raw(sql);
 }
 
-Factory.getEmployeeById = function(tr, emp_id) {
-    let sql = `SELECT * FROM [dbo].[Employee] WHERE EmployeeId = '${emp_id}'`;
-    return db.raw(sql).transacting(tr);;
+Factory.getCourseById = function(course_id) {
+    let sql = `SELECT * FROM [dbo].[Course] WHERE CourseId = '${course_id}'`;
+    return db.raw(sql);
 }
 
-Factory.getEmployeeByKey = function(tr, emp_key) {
-    let sql = `SELECT * FROM [dbo].[Employee] WHERE EmployeeKey = '${emp_key}'`;    
-    return db.raw(sql).transacting(tr);;
+Factory.getCourseByKey = function(course_key) {
+    let sql = `SELECT * FROM [dbo].[Course] WHERE CourseKey = '${course_key}'`;    
+    return db.raw(sql);
 }
 
-Factory.getEmployeeListPaging = async function (pageSize, pageIndex) {
+Factory.getCourseListPaging = async function (pageSize, pageIndex) {
     try
     {
         let page_size = parseInt(pageSize);
@@ -52,28 +52,28 @@ Factory.getEmployeeListPaging = async function (pageSize, pageIndex) {
         let page_offset = page_size * page_index;
 
         // get hits total
-        let sqlTotal = `SELECT COUNT(*) AS Total FROM [dbo].[Employee] WHERE Deleted <> 1`;
+        let sqlTotal = `SELECT COUNT(*) AS Total FROM [dbo].[Course] WHERE Deleted <> 1`;
         let resTotal = await db.raw(sqlTotal);
         let total_rows = resTotal[0].Total;
 
-        // get employee list
+        // get Course list
         var sqlQuery = `
             SELECT  *
-            FROM [dbo].[Employee]
+            FROM [dbo].[Course]
             WHERE Deleted <> 1
-            ORDER BY EmployeeId ASC
+            ORDER BY CourseId ASC
             OFFSET (${page_offset}) ROWS
             FETCH NEXT ${page_size} ROWS ONLY
         `;
                 
-        let employeeList = await db.raw(sqlQuery);
+        let CourseList = await db.raw(sqlQuery);
         
         let result = {
             hits_total: parseInt(total_rows),
             page_total: parseInt(Math.ceil(total_rows / page_size)),
             page_size: parseInt(page_size),
             page_index: parseInt(page_index) + 1,
-            page_data: employeeList
+            page_data: CourseList
         }        
         return result;
     }
@@ -82,23 +82,8 @@ Factory.getEmployeeListPaging = async function (pageSize, pageIndex) {
     }
 }
 
-Factory.getEmployeeList = function() {
-    let sql = `SELECT * FROM [dbo].[Employee] ORDER BY EmployeeId ASC`;
-    return db.raw(sql);
-}
-
-Factory.getTeamList = function() {
-    let sql = `SELECT * FROM [dbo].[Team] ORDER BY TeamId ASC`;
-    return db.raw(sql);
-}
-
-Factory.getDepartmentList = function() {
-    let sql = `SELECT * FROM [dbo].[Department] ORDER BY DepartmentId ASC`;
-    return db.raw(sql);
-}
-
-Factory.getDirectorList = function() {
-    let sql = `SELECT * FROM [dbo].[Director] ORDER BY DirectorId ASC`;
+Factory.getCourseFiles = function(courseId) {
+    let sql = `SELECT * FROM [dbo].[CourseFile] WHERE CourseId = ${courseId} ORDER BY Updated DESC`;
     return db.raw(sql);
 }
 

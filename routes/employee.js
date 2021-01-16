@@ -107,4 +107,46 @@ router.post('/assign', async function (req, res, next) {
     }
 });
 
+router.get('/teams', async function (req, res, next) {
+    try
+    {
+        let teams = await empService.getTeamList();
+        return res.json({
+            code: true,
+            data: teams
+        });
+    }
+    catch (err) {
+        next({ code: false, message: 'Can NOT query table Team'});
+    }
+});
+
+router.get('/departments', async function (req, res, next) {
+    try
+    {
+        let departments = await empService.getDepartmentList();
+        return res.json({
+            code: true,
+            data: departments
+        });
+    }
+    catch (err) {
+        next({ code: false, message: 'Can NOT query table Department'});
+    }
+});
+
+router.get('/directors', async function (req, res, next) {
+    try 
+    {        
+        let directors = await empService.getDirectorList();     
+        return res.json({
+            code: true,
+            data: directors
+        });
+    }
+    catch (err) {
+        next({ code: false, message: 'Can NOT query table Directors'});
+    }
+});
+
 module.exports = router;
