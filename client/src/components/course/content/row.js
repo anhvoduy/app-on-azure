@@ -6,10 +6,10 @@ const Row = function({ index, rowItem }) {
   return (
     <tr>
       <td>{index + 1}</td>
-      <td>{rowItem.EmployeeCode}</td>
-      <td>{rowItem.EmployeeName}</td>
+      <td>{rowItem.CourseName}</td>
+      <td>{rowItem.Description}</td>
       <td className='row-btn'>
-        <Link to={`/employee/${rowItem.EmployeeKey}`}>Edit</Link>
+        <Link to={`/course/${rowItem.CourseKey}`}>Edit</Link>
       </td>
     </tr>
   );

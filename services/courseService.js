@@ -16,19 +16,11 @@ Factory.getTransaction = function() {
     });
 }
 
-Factory.updateCourse = function(course_key, course_name) {
+Factory.updateCourse = function(course_key, course_name, course_desc) {
     let sql = `
         UPDATE [dbo].[Course]
-        SET CourseName = N'${course_name}'
-        WHERE CourseKey = '${course_key}'
-    `;
-    return db.raw(sql);
-}
-
-Factory.assignCourse = function(course_key, teamIds) {
-    let sql = `
-        UPDATE [dbo].[Course]
-        SET TeamIds = N'[${teamIds}]'
+        SET CourseName = N'${course_name}',
+            Description = N'${course_desc}'
         WHERE CourseKey = '${course_key}'
     `;
     return db.raw(sql);

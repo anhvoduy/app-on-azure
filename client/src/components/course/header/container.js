@@ -5,8 +5,8 @@ const Header = function() {
     <thead>
       <tr>
         <th>No.</th>
-        <th>Code</th>
         <th>Name</th>
+        <th>Desc</th>
         <th>Edit</th>
       </tr>
     </thead>

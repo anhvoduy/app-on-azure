@@ -1,10 +1,10 @@
 import api from './api';
 import { forEach } from 'lodash';
 
-const empService = function() {
+const courseService = function() {
 }
 
-empService.status = function() {
+courseService.status = function() {
   let url = '/v1/api/connection';
   return new Promise(function(resolve, reject) {
     api.get(url).then(function(res) {
@@ -16,8 +16,8 @@ empService.status = function() {
   });
 }
 
-empService.getEmployees = function(pageSize, pageIndex) {
-  let url = `/v1/api/employee/list?pagesize=${pageSize}&pageindex=${pageIndex}`;
+courseService.getCourses = function(pageSize, pageIndex) {
+  let url = `/v1/api/course/list?pagesize=${pageSize}&pageindex=${pageIndex}`;
   return new Promise(function(resolve, reject) {
     api.get(url).then(function(res) {
       let { data } = res.data;
@@ -28,8 +28,8 @@ empService.getEmployees = function(pageSize, pageIndex) {
   });
 }
 
-empService.getEmployeeByKey = function(key) {
-  let url = `/v1/api/employee/item?emp_key=${key}`;
+courseService.getCourseByKey = function(key) {
+  let url = `/v1/api/course/item?course_key=${key}`;
   return new Promise(function(resolve, reject) {
     api.get(url).then(function(res) {
       let { data } = res.data;
@@ -41,27 +41,9 @@ empService.getEmployeeByKey = function(key) {
   });
 }
 
-empService.getTeams = function() {
-  let url = '/v1/api/employee/teams';
-  return new Promise(function(resolve, reject) {
-    api.get(url).then(function(res) {
-      let { data } = res.data;
-      if(Array.isArray(data) && data.length) {
-        forEach(data, item => {
-          item.value = item.TeamId;
-          item.label = item.TeamName;
-        });
-      }
-      resolve(data);
-    }).catch(function(err) {
-      reject(err);
-    });
-  });
-}
-
-empService.updateEmployee = function(emp_key, emp_name) {
-  let url = '/v1/api/employee/item';
-  let reqInfo = { emp_key, emp_name };
+courseService.updateCourse = function(course_key, course_name, course_desc) {
+  let url = '/v1/api/course/item';
+  let reqInfo = { course_key, course_name, course_desc };
   return new Promise(function(resolve, reject) {
     api.post(url, reqInfo).then(function(res) {
       let { data } = res.data;
@@ -72,17 +54,4 @@ empService.updateEmployee = function(emp_key, emp_name) {
   });
 }
 
-empService.assignEmployee = function(emp_key, teamIds) {
-  let url = '/v1/api/employee/assign';
-  let reqInfo = { emp_key, teamIds };
-  return new Promise(function(resolve, reject) {
-    api.post(url, reqInfo).then(function(res) {
-      let { data } = res.data;
-      resolve(data);
-    }).catch(function(err) {
-      reject(err);
-    });
-  });
-}
-
-export default empService;
+export default courseService;

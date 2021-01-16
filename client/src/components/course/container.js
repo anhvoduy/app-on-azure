@@ -30,7 +30,7 @@ const Container = function() {
     {
       setLoading(true);
 
-      let resEmpInfo = await courseService.getEmployees(pSize, pIndex);
+      let resEmpInfo = await courseService.getCourses(pSize, pIndex);
       let { page_total, page_data } = resEmpInfo;
       setPageTotal(page_total);
       setEmployees(page_data);

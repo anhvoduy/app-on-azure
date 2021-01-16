@@ -12,7 +12,7 @@ const List = function({ loading, employees, handlePageClick, pageTotal, pageSize
     <Container>
       <Row>
         <Col>
-          <h3>Employees</h3>
+          <h3>Courses</h3>
         </Col>
       </Row>
       <Row>
