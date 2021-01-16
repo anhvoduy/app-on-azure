@@ -1,20 +1,20 @@
 const router = require('express').Router();
 const courseService = require('../services/courseService');
 
-router.get('/courses', async function (req, res, next) {
+router.get('/list', async function (req, res, next) {
     try 
     {
         let { pagesize, pageindex } = req.query;
 
         if(!pagesize || !pageindex)
             throw { code: 'MISSING_REQUIRED_FIELD', message: 'missing required field: pagesize or pageindex' };
-
+        
         // pagesize should be beauty
         if([100, 500, 1000, 1500].indexOf(parseInt(pagesize)) < 0)
             throw { code: 'INVALID_REQUIRED_FIELD', message: 'invalid required field: pagesize' };
 
         let employees = await courseService.getEmployeeListPaging(pagesize, pageindex);
-
+        
         return res.json({
             code: true,
             data: employees
@@ -25,7 +25,7 @@ router.get('/courses', async function (req, res, next) {
     }
 });
 
-router.get('/courses/item', async function (req, res, next) {
+router.get('/item', async function (req, res, next) {
     let tr;
     try 
     {
@@ -50,7 +50,7 @@ router.get('/courses/item', async function (req, res, next) {
     }
 });
 
-router.post('/courses/item', async function (req, res, next) {
+router.post('/item', async function (req, res, next) {
     let tr;
     try 
     {
@@ -77,7 +77,7 @@ router.post('/courses/item', async function (req, res, next) {
     }
 });
 
-router.post('/courses/assign', async function (req, res, next) {
+router.post('/assign', async function (req, res, next) {
     let tr;
     try
     {

@@ -1,20 +1,20 @@
 const router = require('express').Router();
 const empService = require('../services/empService');
 
-router.get('/employees', async function (req, res, next) {
+router.get('/list', async function (req, res, next) {
     try 
     {
         let { pagesize, pageindex } = req.query;
 
         if(!pagesize || !pageindex)
             throw { code: 'MISSING_REQUIRED_FIELD', message: 'missing required field: pagesize or pageindex' };
-
+        
         // pagesize should be beauty
         if([100, 500, 1000, 1500].indexOf(parseInt(pagesize)) < 0)
             throw { code: 'INVALID_REQUIRED_FIELD', message: 'invalid required field: pagesize' };
 
         let employees = await empService.getEmployeeListPaging(pagesize, pageindex);
-
+        
         return res.json({
             code: true,
             data: employees
@@ -25,7 +25,7 @@ router.get('/employees', async function (req, res, next) {
     }
 });
 
-router.get('/employees/item', async function (req, res, next) {
+router.get('/item', async function (req, res, next) {
     let tr;
     try 
     {
@@ -50,7 +50,7 @@ router.get('/employees/item', async function (req, res, next) {
     }
 });
 
-router.post('/employees/item', async function (req, res, next) {
+router.post('/item', async function (req, res, next) {
     let tr;
     try 
     {
@@ -77,7 +77,7 @@ router.post('/employees/item', async function (req, res, next) {
     }
 });
 
-router.post('/employees/assign', async function (req, res, next) {
+router.post('/assign', async function (req, res, next) {
     let tr;
     try
     {
@@ -104,48 +104,6 @@ router.post('/employees/assign', async function (req, res, next) {
     catch (err) {
         if(tr) tr.rollback();
         next({ code: false, message: 'Can NOT query table Employee'});
-    }
-});
-
-router.get('/teams', async function (req, res, next) {
-    try
-    {
-        let teams = await empService.getTeamList();
-        return res.json({
-            code: true,
-            data: teams
-        });
-    }
-    catch (err) {
-        next({ code: false, message: 'Can NOT query table Team'});
-    }
-});
-
-router.get('/departments', async function (req, res, next) {
-    try
-    {
-        let departments = await empService.getDepartmentList();
-        return res.json({
-            code: true,
-            data: departments
-        });
-    }
-    catch (err) {
-        next({ code: false, message: 'Can NOT query table Department'});
-    }
-});
-
-router.get('/directors', async function (req, res, next) {
-    try 
-    {        
-        let directors = await empService.getDirectorList();     
-        return res.json({
-            code: true,
-            data: directors
-        });
-    }
-    catch (err) {
-        next({ code: false, message: 'Can NOT query table Directors'});
     }
 });
 

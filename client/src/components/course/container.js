@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Header from '../base/header';
 import List from './list';
 import Footer from '../base/footer';
-import empService from '../../services/empService';
+import courseService from '../../services/courseService';
 
 const PAGE_SIZE_LIST = [
   {
@@ -30,7 +30,7 @@ const Container = function() {
     {
       setLoading(true);
 
-      let resEmpInfo = await empService.getEmployees(pSize, pIndex);
+      let resEmpInfo = await courseService.getEmployees(pSize, pIndex);
       let { page_total, page_data } = resEmpInfo;
       setPageTotal(page_total);
       setEmployees(page_data);
