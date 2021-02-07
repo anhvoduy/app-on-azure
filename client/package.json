@@ -1,8 +1,8 @@
 {
   "name": "sp-client",
   "version": "1.0.2",
-  "author": "Vo Duy Anh",
-  "email": "voduyanh1984@yahoo.com",
+  "author": "devinsg",
+  "email": "duyanh2005@gmail.com",
   "private": true,
   "engines": {
     "node": "12.15.0",

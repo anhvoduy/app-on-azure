@@ -3,7 +3,8 @@
   "version": "1.0.1",
   "description": "demo-pnp",
   "main": "main.js",
-  "author": "voduyanh",
+  "author": "devinsg",
+  "email": "duyanh2005@gmail.com",
   "license": "ISC",
   "engines": {
     "node": "12.15.0",
