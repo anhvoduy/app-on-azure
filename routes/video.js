@@ -1,6 +1,20 @@
 const router = require('express').Router();
-const moment = require('moment');
 const videoService = require('../services/videoService');
+
+router.get('/connection', async function (req, res, next) {
+    try 
+    {
+        await videoService.getTransaction();
+        return res.json({
+            code: true,
+            message: 'SQL DB is Connected'
+        });
+    }
+    catch (err) {
+        console.log('-err-', err);
+        next({ code: false, message: 'Can NOT connect to SQL DB'});
+    }
+});
 
 router.get('/list', async function (req, res, next) {
     try 
