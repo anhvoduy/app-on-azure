@@ -1,137 +1,60 @@
 import React from 'react';
-import baseService from '../../../services/baseService';
-import image_url from '../../../images/tbs1.jpg';
+import PropTypes from 'prop-types';
+import MainBox from '../mainBox';
+import SubBox from '../subBox';
 
-const Container = function() {  
-  const callAction = (e) => {
-    e.preventDefault();    
-    return baseService.status();
-  };
-
+const Container = function({ callAction, videos }) {
   return (
       <div className='container'>
-        <div className='row align-items-center my-5'>
-          <div className='col-lg-7'>
-            <img className='img-fluid rounded mb-4 mb-lg-0' src={image_url} alt=''/>
-          </div>
-          <div className='col-lg-5'>
-            <h1 className='font-weight-light'>Business Name or Tagline</h1>
-            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-            <a className='btn btn-primary' href='/' onClick={callAction}>Call to Action!</a>
-          </div>
-        </div>
+        {
+          Array.isArray(videos) && videos.length >= 1 && <MainBox callAction={callAction} title={videos[0].VideoName} text={videos[0].Description} />
+        }
         <div className='card text-white bg-secondary my-5 py-4 text-center'>
           <div className='card-body'>
             <p className='text-white m-0'>This call to action card is a great place to showcase some important information or display a clever tagline!</p>
           </div>
         </div>
         <div className='row'>
-          <div className='col-md-4 mb-5'>
-            <div className='card h-100'>
-              <div className='card-body'>
-                <h2 className='card-title'>Card One</h2>
-                <p className='card-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-              </div>
-              <div className='card-footer'>
-                <a href='/' className='btn btn-primary btn-sm'>More Info</a>
-              </div>
-            </div>
-          </div>
-          <div className='col-md-4 mb-5'>
-            <div className='card h-100'>
-              <div className='card-body'>
-                <h2 className='card-title'>Card Two</h2>
-                <p className='card-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-              </div>
-              <div className='card-footer'>
-                <a href='/' className='btn btn-primary btn-sm'>More Info</a>
-              </div>
-            </div>
-          </div>
-          <div className='col-md-4 mb-5'>
-            <div className='card h-100'>
-              <div className='card-body'>
-                <h2 className='card-title'>Card Three</h2>
-                <p className='card-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-              </div>
-              <div className='card-footer'>
-                <a href='/' className='btn btn-primary btn-sm'>More Info</a>
-              </div>
-            </div>
-          </div>
+          {
+            Array.isArray(videos) && videos.length >= 2 && <SubBox title={videos[1].VideoName} text={videos[1].Description}/>
+          }
+          {
+            Array.isArray(videos) && videos.length >= 3 && <SubBox title={videos[2].VideoName} text={videos[2].Description}/>
+          }
+          {
+            Array.isArray(videos) && videos.length >= 4 && <SubBox title={videos[3].VideoName} text={videos[3].Description}/>
+          }
         </div>
         <div className='row'>
-          <div className='col-md-4 mb-5'>
-            <div className='card h-100'>
-              <div className='card-body'>
-                <h2 className='card-title'>Card One</h2>
-                <p className='card-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-              </div>
-              <div className='card-footer'>
-                <a href='/' className='btn btn-primary btn-sm'>More Info</a>
-              </div>
-            </div>
-          </div>
-          <div className='col-md-4 mb-5'>
-            <div className='card h-100'>
-              <div className='card-body'>
-                <h2 className='card-title'>Card Two</h2>
-                <p className='card-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-              </div>
-              <div className='card-footer'>
-                <a href='/' className='btn btn-primary btn-sm'>More Info</a>
-              </div>
-            </div>
-          </div>
-          <div className='col-md-4 mb-5'>
-            <div className='card h-100'>
-              <div className='card-body'>
-                <h2 className='card-title'>Card Three</h2>
-                <p className='card-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-              </div>
-              <div className='card-footer'>
-                <a href='/' className='btn btn-primary btn-sm'>More Info</a>
-              </div>
-            </div>
-          </div>
+          {
+            Array.isArray(videos) && videos.length >= 5 && <SubBox title={videos[4].VideoName} text={videos[4].Description}/>
+          }
+          {
+            Array.isArray(videos) && videos.length >= 6 && <SubBox title={videos[5].VideoName} text={videos[5].Description}/>
+          }
+          {
+            Array.isArray(videos) && videos.length >= 7 && <SubBox title={videos[6].VideoName} text={videos[6].Description}/>
+          }
         </div>
         <div className='row'>
-          <div className='col-md-4 mb-5'>
-            <div className='card h-100'>
-              <div className='card-body'>
-                <h2 className='card-title'>Card One</h2>
-                <p className='card-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-              </div>
-              <div className='card-footer'>
-                <a href='/' className='btn btn-primary btn-sm'>More Info</a>
-              </div>
-            </div>
-          </div>
-          <div className='col-md-4 mb-5'>
-            <div className='card h-100'>
-              <div className='card-body'>
-                <h2 className='card-title'>Card Two</h2>
-                <p className='card-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-              </div>
-              <div className='card-footer'>
-                <a href='/' className='btn btn-primary btn-sm'>More Info</a>
-              </div>
-            </div>
-          </div>
-          <div className='col-md-4 mb-5'>
-            <div className='card h-100'>
-              <div className='card-body'>
-                <h2 className='card-title'>Card Three</h2>
-                <p className='card-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-              </div>
-              <div className='card-footer'>
-                <a href='/' className='btn btn-primary btn-sm'>More Info</a>
-              </div>
-            </div>
-          </div>
+          {
+            Array.isArray(videos) && videos.length >= 8 && <SubBox title={videos[7].VideoName} text={videos[7].Description}/>
+          }
+          {
+            Array.isArray(videos) && videos.length >= 9 && <SubBox title={videos[8].VideoName} text={videos[8].Description}/>
+          }
+          {
+            Array.isArray(videos) && videos.length >= 10 && <SubBox title={videos[9].VideoName} text={videos[9].Description}/>
+          }
         </div>
       </div>
   );
 }
+
+Container.propTypes = {
+  callAction: PropTypes.func,
+  loading: PropTypes.bool,
+  videos: PropTypes.array
+};
 
 export default Container;

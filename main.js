@@ -19,6 +19,7 @@ app.set('secretKey', process.env.SECRET_KEY || 'i-love-sharepoint');
 app.use('/v1/api', require('./routes/api'));
 app.use('/v1/api/employee', require('./routes/employee'));
 app.use('/v1/api/course', require('./routes/course'));
+app.use('/v1/api/video', require('./routes/video'));
 
 // setup web site
 const siteApp = path.join(__dirname, 'client/build');

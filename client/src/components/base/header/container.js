@@ -4,7 +4,7 @@ const Container = function() {
   return (
     <nav className='navbar navbar-expand-lg navbar-dark bg-dark fixed-top'>
       <div className='container'>
-        <a className='navbar-brand' href='/'>UFM QTKD K17</a>
+        <a className='navbar-brand' href='/'>VNI Online 365</a>
         <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon'></span>
         </button>
@@ -20,6 +20,9 @@ const Container = function() {
             </li>            
             <li className='nav-item'>
               <a className='nav-link' href='/course'>Course</a>
+            </li>
+            <li className='nav-item'>
+              <a className='nav-link' href='/video'>Video</a>
             </li>
           </ul>
         </div>
