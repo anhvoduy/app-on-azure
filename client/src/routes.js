@@ -6,6 +6,8 @@ import Employee from './components/employee';
 import EmployeeEdit from './components/employeeEdit';
 import Course from './components/course';
 import CourseEdit from './components/courseEdit';
+import Video from './components/video';
+import VideoEdit from './components/videoEdit';
 
 const RouteConfig = function() {
     return (
@@ -25,6 +27,12 @@ const RouteConfig = function() {
                 </Route>
                 <Route exact path="/course/:id">
                     <CourseEdit />
+                </Route>
+                <Route exact path="/video">
+                    <Video />
+                </Route>
+                <Route exact path="/video/:id">
+                    <VideoEdit />
                 </Route>
             </Switch>
         </Router>
