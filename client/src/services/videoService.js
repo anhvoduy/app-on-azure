@@ -47,7 +47,7 @@ videoService.getCategoryList = function() {
     api.get(url).then(function(res) {
       let { data } = res.data;
       if(Array.isArray(data) && data.length) {
-        forEach(data, item => {
+        _.forEach(data, item => {
           item.value = item.VideoCategoryId;
           item.label = item.VideoCategoryName;
         });

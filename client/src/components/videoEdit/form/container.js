@@ -1,40 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types'; 
-import { Container, Form, Button } from 'react-bootstrap';
-import Select from 'react-dropdown-select';
+import { Container, Form } from 'react-bootstrap';
 
-const FormEdit = function({ employee, teams, selectTeams, saveEmployee, onSelectChangeTeam, onChangeEmployeeName }) {    
+const FormEdit = function({ video }) {    
     return (
         <Container className='form-full-screen'>
             <Form>
-                <Form.Group controlId="formEmpCode">
-                    <Form.Label>Employee Code:</Form.Label>
-                    <Form.Control type="text" placeholder="Enter employee code" value={employee.EmployeeCode} readOnly={true}/>
+                <Form.Group controlId="txtVideoName">
+                    <Form.Label>Video Name:</Form.Label>
+                    <Form.Control type="text" placeholder="Enter video name" value={video.VideoName} />
                 </Form.Group>
-                <Form.Group controlId="formEmpName">
-                    <Form.Label>Employee Name:</Form.Label>
-                    <Form.Control type="text" placeholder="Enter account name" value={employee.EmployeeName} onChange={onChangeEmployeeName} />
+                <Form.Group controlId="txtVideoNameEn">
+                    <Form.Label>Video Name (English):</Form.Label>
+                    <Form.Control type="text" placeholder="Enter video name (en)" value={video.VideoName_EN} />
                 </Form.Group>
-                <Form.Group controlId="formSelectTeam">
-                    <Form.Label>Teams:</Form.Label>
-                    <Select options={teams} onChange={onSelectChangeTeam} multi={true} values={selectTeams} />
+                <Form.Group controlId="txtDescription">
+                    <Form.Label>Short Description:</Form.Label>
+                    <Form.Control type="text" placeholder="Enter short description" value={video.Description} />
                 </Form.Group>
-                
-                <Button variant="primary" type="submit" onClick={saveEmployee}>
-                    Submit
-                </Button>
+                <Form.Group controlId="txtDescription">
+                    <Form.Label>Short Description:</Form.Label>
+                    <Form.Control type="text" placeholder="Enter short description (en)" value={video.Description_EN} />
+                </Form.Group>
             </Form>
         </Container>
     );
 }
 
 FormEdit.propTypes = {
-    employee: PropTypes.object,
-    teams: PropTypes.array,
-    selectTeams: PropTypes.array,
-    saveEmployee: PropTypes.func,
-    onSelectChangeTeam: PropTypes.func,    
-    onChangeEmployeeName: PropTypes.func
+    video: PropTypes.object
 };
 
 export default FormEdit;
