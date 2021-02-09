@@ -37,7 +37,7 @@ const getDocumentList = function() {
         }, (err) => {
             console.log('- ERROR:', err);
             reject(err);
-        });        
+        });
     });
 }
 

@@ -1,14 +1,15 @@
 {
   "name": "demo-pnp",
-  "version": "1.0.1",
-  "description": "demo-pnp",
-  "main": "main.js",
-  "author": "voduyanh",
-  "license": "ISC",
+  "version": "1.0.3",
+  "description": "demo-pnp",  
+  "author": "devinsg",
+  "email": "vnonline365@gmail.com",
+  "license": "MIT",
   "engines": {
     "node": "12.15.0",
     "npm": "6.13.4"
   },
+  "main": "main.js",
   "scripts": {
     "test": "mocha",
     "dev": "nodemon main.js",
