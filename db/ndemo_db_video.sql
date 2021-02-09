@@ -67,6 +67,7 @@ BEGIN
 		[Description]   	[NVARCHAR](500) DEFAULT NULL,
 		[Description_EN]   	[NVARCHAR](500) DEFAULT NULL,
 		[VideoCategoryId]   [INT] DEFAULT 0,
+		[Viewed]   			[INT] DEFAULT 0,
 		[Created]       	[DATETIME] DEFAULT CURRENT_TIMESTAMP,
 		[Updated]       	[DATETIME] DEFAULT CURRENT_TIMESTAMP,
 		[Author]        	[NVARCHAR](50) DEFAULT NULL,

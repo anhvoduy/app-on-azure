@@ -34,6 +34,15 @@ Factory.updateVideo = function(tr, video_id, video_name) {
     return db.raw(sql).transacting(tr);
 }
 
+Factory.updateViewed = function(tr, video_id) {
+    let sql = `
+        UPDATE [dbo].[Video]
+        SET Viewed = Viewed + 1
+        WHERE VideoId = '${video_id}'
+    `;
+    return db.raw(sql).transacting(tr);
+}
+
 Factory.getVideoById = function(tr, video_id) {
     let sql = `SELECT * FROM [dbo].[Video] WHERE VideoId = '${video_id}'`;
     return db.raw(sql).transacting(tr);;
