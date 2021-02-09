@@ -20,7 +20,6 @@ router.get('/list', async function (req, res, next) {
     try 
     {
         let { pagesize, pageindex } = req.query;
-
         if(!pagesize || !pageindex)
             throw { code: 'MISSING_REQUIRED_FIELD', message: 'missing required field: pagesize or pageindex' };
 
@@ -29,36 +28,31 @@ router.get('/list', async function (req, res, next) {
             throw { code: 'INVALID_REQUIRED_FIELD', message: 'invalid required field: pagesize' };
 
         let employees = await videoService.getVideoListPaging(pagesize, pageindex);
-
         return res.json({
             code: true,
             data: employees
         });
     }
     catch (err) {
-        next({ code: false, message: 'Can NOT query table Employee'});
+        next({ code: false, message: 'Can NOT query table Video'});
     }
 });
 
 router.get('/item', async function (req, res, next) {    
     try 
     {
-        let { emp_key } = req.query;
+        let { video_key } = req.query;
+        if(!video_key)
+			throw { code: 'MISSING_REQUIRED_FIELD', message: 'missing required field: video_key' }            
 
-        if(!emp_key)
-			throw { code: 'MISSING_REQUIRED_FIELD', message: 'missing required field: emp_key' }            
-
-        let empInfo = await videoService.getVideoByKey(emp_key);
-
-        tr.commit();
+        let empInfo = await videoService.getVideoByKey(video_key);
         return res.json({
             code: true,
             data: empInfo
         });
     }
     catch (err) {
-        if(tr) tr.rollback();
-        next({ code: false, message: 'Can NOT query table Employee'});
+        next({ code: false, message: 'Can NOT query table Video'});
     }
 });
 
@@ -66,7 +60,7 @@ router.post('/item', async function (req, res, next) {
     let tr;
     try 
     {
-        let { video_id, video_name } = req.body;        
+        let { video_id, video_name } = req.body;
         
         if(!video_id)
 			throw { code: 'MISSING_REQUIRED_FIELD', message: 'missing required field: video_id' }
@@ -85,7 +79,7 @@ router.post('/item', async function (req, res, next) {
     }
     catch (err) {
         if(tr) tr.rollback();
-        next({ code: false, message: 'Can NOT query table Employee'});
+        next({ code: false, message: 'Can NOT query table Video'});
     }
 });
 
@@ -115,7 +109,21 @@ router.post('/create', async function (req, res, next) {
     }
     catch (err) {
         if(tr) tr.rollback();
-        next({ code: false, message: 'Can NOT query table Employee'});
+        next({ code: false, message: 'Can NOT query table Video'});
+    }
+});
+
+router.get('/category', async function (req, res, next) {
+    try
+    {
+        let categories = await videoService.getVideoCategory();
+        return res.json({
+            code: true,
+            data: categories
+        });
+    }
+    catch (err) {
+        next({ code: false, message: 'Can NOT query table VideoCategory'});
     }
 });
 
