@@ -6,7 +6,7 @@ import ReactPlayer from 'react-player'
 const Display = function({ title, text, files = [] }) {
     return (
         <Container className='form-full-screen'>
-        { title && files.length && <ReactPlayer url={files[0].VideoFileUrl} playing={true} /> }
+        { title && files.length && <ReactPlayer url={files[0].VideoFileUrl} playing={true} muted={true} /> }
         </Container>
     );
 }
