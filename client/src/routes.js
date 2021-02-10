@@ -8,6 +8,7 @@ import Course from './components/course';
 import CourseEdit from './components/courseEdit';
 import Video from './components/video';
 import VideoEdit from './components/videoEdit';
+import Player from './components/player';
 
 const RouteConfig = function() {
     return (
@@ -33,6 +34,9 @@ const RouteConfig = function() {
                 </Route>
                 <Route exact path="/video/:id">
                     <VideoEdit />
+                </Route>
+                <Route exact path="/player/:id">
+                    <Player />
                 </Route>
             </Switch>
         </Router>

@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { useHistory } from 'react-router-dom';
 import Header from '../base/header';
 import Footer from '../base/footer';
 import Content from './content';
 import videoService from '../../services/videoService';
 
 const Container = function() {
+  const history = useHistory();
   const [loading, setLoading] = useState(false);
   const [videos, setVideos] = useState([]);
 
@@ -28,17 +30,12 @@ const Container = function() {
   useEffect(() => {
     queryData(50, 0);
   },[queryData]);
-
-  const callAction = (e) => {
-    e.preventDefault();    
-    return videoService.status();
-  };
-
+      
   return (
     <div className='wrap home-page'>
       <Header />
 
-      <Content callAction={callAction} loading={loading} videos={videos} />
+      <Content loading={loading} videos={videos} />
       
       <Footer />
     </div>
