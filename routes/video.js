@@ -45,10 +45,15 @@ router.get('/item', async function (req, res, next) {
         if(!video_key)
 			throw { code: 'MISSING_REQUIRED_FIELD', message: 'missing required field: video_key' }            
 
-        let empInfo = await videoService.getVideoByKey(video_key);
+        let videos = await videoService.getVideoByKey(video_key);
+        let files = await videoService.getVideoFiles(video_key);
+
+        let videoInfo = (Array.isArray(videos) && videos.length) ? videos[0] : {};
+        videoInfo.Files = files;
+        
         return res.json({
             code: true,
-            data: empInfo
+            data: videoInfo
         });
     }
     catch (err) {
