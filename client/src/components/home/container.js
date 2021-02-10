@@ -1,16 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
 import Header from '../base/header';
 import Footer from '../base/footer';
 import Content from './content';
 import videoService from '../../services/videoService';
 
 const Container = function() {
-  const history = useHistory();
   const [loading, setLoading] = useState(false);
   const [videos, setVideos] = useState([]);
 
-  const queryData = useCallback(async function (pSize, pIndex) {
+  const queryData = useCallback(async (pSize, pIndex) => {
     try
     {
       setLoading(true);

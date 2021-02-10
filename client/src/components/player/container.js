@@ -6,8 +6,7 @@ import Footer from '../base/footer';
 import videoService from '../../services/videoService';
 
 const Container = function() {  
-  const { id: video_key } = useParams();
-  const [loading, setLoading] = useState(false);
+  const { id: video_key } = useParams();  
   const [video, setVideo] = useState(null);
 
   const queryData = useCallback(async function () {
@@ -27,7 +26,7 @@ const Container = function() {
     <div className='wrap player-page'>
       <Header />      
       
-      <Display loading={loading} video={video} />
+      <Display video={video} />
       
       <Footer />
     </div>
