@@ -1,11 +1,11 @@
 import React, { useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
+//import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types'; 
 import image_url from '../../../images/tbs1.jpg';
 
 const Container = function({ title, text, videoKey }) {
-  const history = useHistory();
-  const playVideo = useCallback(() => history.push(`/player/${videoKey}`), [history, videoKey]);
+  //const history = useHistory();
+  //const playVideo = useCallback(() => history.push(`/player/${videoKey}`), [history, videoKey]);
   return (
     <div className='row align-items-center my-5'>
       <div className='col-lg-7'>
