@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import logo from '../../logo.svg';
 import './app.css';
 import authService from '../../services/authService';
-import baseService from '../../services/baseService';
+import sp_service from '../../services/sp_service';
 
 function App() {
   const [firstEmployee, setFirstEmployee] = useState(null);
@@ -11,7 +11,7 @@ function App() {
     async function fetchData() {
       let tokenInfo = await authService.getAccessToken();
       let { token_type, access_token } = tokenInfo;    
-      let emp = await baseService.getEmployee(token_type, access_token);
+      let emp = await sp_service.getEmployee(token_type, access_token);
       setFirstEmployee(emp);
     }
 
@@ -30,7 +30,7 @@ function App() {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer">
-          Learn React App
+          Develop React Application with SharePoint
         </a>
       </header>
     </div>

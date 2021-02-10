@@ -32,8 +32,8 @@ videoService.getVideoByKey = function(key) {
   let url = `/v1/api/video/item?video_key=${key}`;
   return new Promise(function(resolve, reject) {
     api.get(url).then(function(res) {
-      let { data } = res.data;
-      if(Array.isArray(data) && data.length) resolve(data[0]);
+      let { data: video } = res.data;      
+      if(video) resolve(video);
       else resolve({});
     }).catch(function(err) {
       reject(err);

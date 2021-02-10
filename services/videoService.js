@@ -34,6 +34,15 @@ Factory.updateVideo = function(tr, video_id, video_name) {
     return db.raw(sql).transacting(tr);
 }
 
+Factory.updateViewed = function(tr, video_id) {
+    let sql = `
+        UPDATE [dbo].[Video]
+        SET Viewed = Viewed + 1
+        WHERE VideoId = '${video_id}'
+    `;
+    return db.raw(sql).transacting(tr);
+}
+
 Factory.getVideoById = function(tr, video_id) {
     let sql = `SELECT * FROM [dbo].[Video] WHERE VideoId = '${video_id}'`;
     return db.raw(sql).transacting(tr);;
@@ -91,6 +100,16 @@ Factory.getVideoByKey = function(video_key) {
 
 Factory.getVideoCategory = function() {
     let sql = `SELECT * FROM [dbo].[VideoCategory] ORDER BY VideoCategoryId ASC`;
+    return db.raw(sql);
+}
+
+Factory.getVideoFiles = function(video_key) {
+    let sql = `
+        SELECT VF.* 
+        FROM [dbo].[VideoFile] VF INNER JOIN [dbo].[Video] V ON VF.VideoId = V.VideoId
+        WHERE V.VideoKey = '${video_key}'
+        ORDER BY VF.VideoFileId ASC
+    `;
     return db.raw(sql);
 }
 

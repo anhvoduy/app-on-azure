@@ -1,5 +1,4 @@
 import api from './api';
-import { forEach } from 'lodash';
 
 const courseService = function() {
 }

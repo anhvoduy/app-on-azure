@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import MainBox from '../mainBox';
 import SubBox from '../subBox';
 
-const Container = function({ callAction, videos }) {
+const Container = function({ loading, videos }) {
   return (
       <div className='container'>
         {
-          Array.isArray(videos) && videos.length >= 1 && <MainBox callAction={callAction} title={videos[0].VideoName} text={videos[0].Description} />
+          Array.isArray(videos) && videos.length >= 1 && <MainBox title={videos[0].VideoName} text={videos[0].Description} videoKey={videos[0].VideoKey} />
         }
         <div className='card text-white bg-secondary my-5 py-4 text-center'>
           <div className='card-body'>
@@ -52,7 +52,6 @@ const Container = function({ callAction, videos }) {
 }
 
 Container.propTypes = {
-  callAction: PropTypes.func,
   loading: PropTypes.bool,
   videos: PropTypes.array
 };

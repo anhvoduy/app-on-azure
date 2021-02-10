@@ -1,6 +1,6 @@
 {
-  "short_name": "VniOnline365",
-  "name": "VNI Online 365",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",
