@@ -23,6 +23,7 @@
     "react-dropdown-select": "^4.7.3",
     "react-i18next": "^11.8.5",
     "react-paginate": "^7.0.0",
+    "react-player": "^2.8.2",
     "react-redux": "^7.2.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",

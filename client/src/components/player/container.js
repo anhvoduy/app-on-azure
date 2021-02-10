@@ -11,8 +11,7 @@ const Container = function() {
   const [video, setVideo] = useState(null);
 
   const queryData = useCallback(async function () {
-    try {
-      console.log(video_key);
+    try {      
       let videoInfo = await videoService.getVideoByKey(video_key);      
       setVideo(videoInfo);
     } catch (err) {
