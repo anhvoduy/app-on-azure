@@ -46,7 +46,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "production": "GENERATE_SOURCEMAP=false react-scripts build",
+    "mac_production": "GENERATE_SOURCEMAP=false react-scripts build",
+    "win_production": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
