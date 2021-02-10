@@ -11,8 +11,8 @@ const Container = function() {
 
   const queryData = useCallback(async function () {
     try {      
-      let videoInfo = await videoService.getVideoByKey(video_key);      
-      setVideo(videoInfo);
+      let vid = await videoService.getVideoByKey(video_key);
+      setVideo(vid);
     } catch (err) {
       throw err;
     }
@@ -25,9 +25,9 @@ const Container = function() {
   return (
     <div className='wrap player-page'>
       <Header />      
-      
-      <Display video={video} />
-      
+      {
+        video ? <Display title={video.VideoName} text={video.Description} files={video.Files} /> : null
+      }
       <Footer />
     </div>
   );

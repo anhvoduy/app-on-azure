@@ -103,4 +103,14 @@ Factory.getVideoCategory = function() {
     return db.raw(sql);
 }
 
+Factory.getVideoFiles = function(video_key) {
+    let sql = `
+        SELECT VF.* 
+        FROM [dbo].[VideoFile] VF INNER JOIN [dbo].[Video] V ON VF.VideoId = V.VideoId
+        WHERE V.VideoKey = '${video_key}'
+        ORDER BY VF.VideoFileId ASC
+    `;
+    return db.raw(sql);
+}
+
 module.exports = Factory;

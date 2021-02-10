@@ -3,16 +3,18 @@ import PropTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
 import ReactPlayer from 'react-player'
 
-const FormDisplay = function({ video }) {    
+const Display = function({ title, text, files = [] }) {
     return (
         <Container className='form-full-screen'>
-            <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
+        { title && files.length && <ReactPlayer url={files[0].VideoFileUrl} playing={true} /> }
         </Container>
     );
 }
 
-FormDisplay.propTypes = {
-    video: PropTypes.object
+Display.propTypes = {
+    title: PropTypes.string,
+    text: PropTypes.string,
+    files: PropTypes.array
 };
 
-export default FormDisplay;
+export default Display;

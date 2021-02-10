@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 //import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types'; 
 import image_url from '../../../images/tbs1.jpg';
