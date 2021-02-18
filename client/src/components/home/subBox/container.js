@@ -10,7 +10,7 @@ const Container = function({ title, text }) {
           <p className='card-text'>{text}</p>
         </div>
         <div className='card-footer'>
-          <a href='/' className='btn btn-primary btn-sm'>More Info</a>
+          <a href='/' className='btn btn-primary btn-sm'>Xem phim</a>
         </div>
       </div>
     </div>
