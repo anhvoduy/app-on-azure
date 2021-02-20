@@ -11,7 +11,6 @@
   },
   "main": "main.js",
   "scripts": {
-    "test": "mocha",
     "dev": "nodemon main.js",
     "start": "node main.js"
   },
