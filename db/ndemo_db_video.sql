@@ -66,6 +66,7 @@ BEGIN
 		[VideoName_EN] 		[NVARCHAR](50) DEFAULT NULL,
 		[Description]   	[NVARCHAR](500) DEFAULT NULL,
 		[Description_EN]   	[NVARCHAR](500) DEFAULT NULL,
+		[ImageUrl]			[NVARCHAR](500) DEFAULT NULL,
 		[VideoCategoryId]   [INT] DEFAULT 0,
 		[Viewed]   			[INT] DEFAULT 0,
 		[Created]       	[DATETIME] DEFAULT CURRENT_TIMESTAMP,
@@ -82,35 +83,45 @@ END
 GO	
 
 -- Sample data
-INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, Author, Editor)
-VALUES (NEWID(), N'Business Name or Tagline', N'This is a template that is great for small businesses. It does not have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!', '1', 'SYSTEM', 'SYSTEM')
+INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, ImageUrl, Author, Editor)
+VALUES (NEWID(), N'Business Name or Tagline', N'This is a template that is great for small businesses. It does not have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!', 
+	'1', 'https://aws-product-images.s3.amazonaws.com/video/009.jpg', 'SYSTEM', 'SYSTEM')
 
-INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, Author, Editor)
-VALUES (NEWID(), N'Card One', N'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.', '1', 'SYSTEM', 'SYSTEM')
+INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, ImageUrl, Author, Editor)
+VALUES (NEWID(), N'Card One', N'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.',
+	'1', 'https://aws-product-images.s3.amazonaws.com/video/009.jpg', 'SYSTEM', 'SYSTEM')
 
-INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, Author, Editor)
-VALUES (NEWID(), N'Card Two', N'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.', '1', 'SYSTEM', 'SYSTEM')
+INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, ImageUrl, Author, Editor)
+VALUES (NEWID(), N'Card Two', N'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.',
+	'1', 'https://aws-product-images.s3.amazonaws.com/video/009.jpg', 'SYSTEM', 'SYSTEM')
 
-INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, Author, Editor)
-VALUES (NEWID(), N'Card Three', N'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.', '1', 'SYSTEM', 'SYSTEM')
+INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, ImageUrl, Author, Editor)
+VALUES (NEWID(), N'Card Three', N'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.',
+	'1', 'https://aws-product-images.s3.amazonaws.com/video/009.jpg', 'SYSTEM', 'SYSTEM')
 
-INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, Author, Editor)
-VALUES (NEWID(), N'God Father - Part I', N'God Father - Part I', '2', 'SYSTEM', 'SYSTEM')
+INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, ImageUrl, Author, Editor)
+VALUES (NEWID(), N'God Father - Part I', N'God Father - Part I', 
+	'2', 'https://aws-product-images.s3.amazonaws.com/video/009.jpg', 'SYSTEM', 'SYSTEM')
 
-INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, Author, Editor)
-VALUES (NEWID(), N'God Father - Part II', N'God Father - Part II', '2', 'SYSTEM', 'SYSTEM')
+INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, ImageUrl, Author, Editor)
+VALUES (NEWID(), N'God Father - Part II', N'God Father - Part II',
+	'2', 'https://aws-product-images.s3.amazonaws.com/video/009.jpg', 'SYSTEM', 'SYSTEM')
 
-INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, Author, Editor)
-VALUES (NEWID(), N'God Father - Part III', N'God Father - Part III', '2', 'SYSTEM', 'SYSTEM')
+INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, ImageUrl, Author, Editor)
+VALUES (NEWID(), N'God Father - Part III', N'God Father - Part III',
+	'2', 'https://aws-product-images.s3.amazonaws.com/video/009.jpg', 'SYSTEM', 'SYSTEM')
 
-INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, Author, Editor)
-VALUES (NEWID(), N'Abraham Lincoln', N'Abraham Lincoln', '2', 'SYSTEM', 'SYSTEM')
+INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, ImageUrl, Author, Editor)
+VALUES (NEWID(), N'Abraham Lincoln', N'Abraham Lincoln', 
+	'2', 'https://aws-product-images.s3.amazonaws.com/video/009.jpg', 'SYSTEM', 'SYSTEM')
 
-INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, Author, Editor)
-VALUES (NEWID(), N'Rise of Empire - Part I', N'Rise of Empire - Part I', '2', 'SYSTEM', 'SYSTEM')
+INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, ImageUrl, Author, Editor)
+VALUES (NEWID(), N'Rise of Empire - Part I', N'Rise of Empire - Part I', 
+	'2', 'https://aws-product-images.s3.amazonaws.com/video/009.jpg', 'SYSTEM', 'SYSTEM')
 
-INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, Author, Editor)
-VALUES (NEWID(), N'Rise of Empire - Part II', N'Rise of Empire - Part II', '2', 'SYSTEM', 'SYSTEM')
+INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, ImageUrl, Author, Editor)
+VALUES (NEWID(), N'Rise of Empire - Part II', N'Rise of Empire - Part II',
+	'2', 'https://aws-product-images.s3.amazonaws.com/video/009.jpg', 'SYSTEM', 'SYSTEM')
 
 
 --
@@ -144,16 +155,16 @@ GO
 
 -- Sample data
 INSERT INTO [dbo].[VideoFile] (VideoFileKey, VideoFileUrl, VideoId, Author, Editor)
-VALUES (NEWID(), 'https://aws-product-videos.s3-us-west-2.amazonaws.com/300+Rise+of+an+Empire.mp4', '1', 'SYSTEM', 'SYSTEM')
+VALUES (NEWID(), 'https://aws-product-videos.s3-us-west-2.amazonaws.com/mov_bbb.mp4', '1', 'SYSTEM', 'SYSTEM')
 
 INSERT INTO [dbo].[VideoFile] (VideoFileKey, VideoFileUrl, VideoId, Author, Editor)
-VALUES (NEWID(), 'https://aws-product-videos.s3-us-west-2.amazonaws.com/300+Rise+of+an+Empire.mp4', '2', 'SYSTEM', 'SYSTEM')
+VALUES (NEWID(), 'https://aws-product-videos.s3-us-west-2.amazonaws.com/mov_bbb.mp4', '2', 'SYSTEM', 'SYSTEM')
 
 INSERT INTO [dbo].[VideoFile] (VideoFileKey, VideoFileUrl, VideoId, Author, Editor)
 VALUES (NEWID(), 'https://aws-product-videos.s3-us-west-2.amazonaws.com/publicis.mp4', '3', 'SYSTEM', 'SYSTEM')
 
 INSERT INTO [dbo].[VideoFile] (VideoFileKey, VideoFileUrl, VideoId, Author, Editor)
-VALUES (NEWID(), 'https://aws-product-videos.s3-us-west-2.amazonaws.com/publicis.mp4', '4', 'SYSTEM', 'SYSTEM')
+VALUES (NEWID(), 'https://www.youtube.com/watch?v=ysz5S6PUM-U', '4', 'SYSTEM', 'SYSTEM')
 
 INSERT INTO [dbo].[VideoFile] (VideoFileKey, VideoFileUrl, VideoId, Author, Editor)
 VALUES (NEWID(), 'https://aws-product-videos.s3-us-west-2.amazonaws.com/publicis.mp4', '5', 'SYSTEM', 'SYSTEM')
@@ -168,7 +179,10 @@ INSERT INTO [dbo].[VideoFile] (VideoFileKey, VideoFileUrl, VideoId, Author, Edit
 VALUES (NEWID(), 'https://www.youtube.com/watch?v=ysz5S6PUM-U', '8', 'SYSTEM', 'SYSTEM')
 
 INSERT INTO [dbo].[VideoFile] (VideoFileKey, VideoFileUrl, VideoId, Author, Editor)
-VALUES (NEWID(), 'https://www.youtube.com/watch?v=ysz5S6PUM-U', '9', 'SYSTEM', 'SYSTEM')
+VALUES (NEWID(), 'https://aws-product-videos.s3-us-west-2.amazonaws.com/300+Rise+of+an+Empire.mp4', '9', 'SYSTEM', 'SYSTEM')
+
+INSERT INTO [dbo].[VideoFile] (VideoFileKey, VideoFileUrl, VideoId, Author, Editor)
+VALUES (NEWID(), 'https://aws-product-videos.s3-us-west-2.amazonaws.com/300+Rise+of+an+Empire.mp4', '10', 'SYSTEM', 'SYSTEM')
 
 INSERT INTO [dbo].[VideoFile] (VideoFileKey, VideoFileUrl, VideoId, Author, Editor)
 VALUES (NEWID(), 'https://aws-product-images.s3.amazonaws.com/ANH_VO_DUY_CV.pdf', '10', 'SYSTEM', 'SYSTEM')

@@ -1,5 +1,6 @@
 # demo-pnp
 (spapp: reactjs + nodejs + pnp): on azure app service
+hosted: https://demo-pnp.azurewebsites.net/
 
 ### link ref
 https://www.kofrimpong.com/how-to-access-sharepoint-using-an-application-context/

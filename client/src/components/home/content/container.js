@@ -16,35 +16,35 @@ const Container = function({ loading, videos }) {
         </div>
         <div className='row'>
           {
-            Array.isArray(videos) && videos.length >= 2 && <SubBox title={videos[1].VideoName} text={videos[1].Description}/>
+            Array.isArray(videos) && videos.length >= 2 && <SubBox title={videos[1].VideoName} text={videos[1].Description} videoKey={videos[1].VideoKey} />
           }
           {
-            Array.isArray(videos) && videos.length >= 3 && <SubBox title={videos[2].VideoName} text={videos[2].Description}/>
+            Array.isArray(videos) && videos.length >= 3 && <SubBox title={videos[2].VideoName} text={videos[2].Description} videoKey={videos[2].VideoKey} />
           }
           {
-            Array.isArray(videos) && videos.length >= 4 && <SubBox title={videos[3].VideoName} text={videos[3].Description}/>
-          }
-        </div>
-        <div className='row'>
-          {
-            Array.isArray(videos) && videos.length >= 5 && <SubBox title={videos[4].VideoName} text={videos[4].Description}/>
-          }
-          {
-            Array.isArray(videos) && videos.length >= 6 && <SubBox title={videos[5].VideoName} text={videos[5].Description}/>
-          }
-          {
-            Array.isArray(videos) && videos.length >= 7 && <SubBox title={videos[6].VideoName} text={videos[6].Description}/>
+            Array.isArray(videos) && videos.length >= 4 && <SubBox title={videos[3].VideoName} text={videos[3].Description} videoKey={videos[3].VideoKey} />
           }
         </div>
         <div className='row'>
           {
-            Array.isArray(videos) && videos.length >= 8 && <SubBox title={videos[7].VideoName} text={videos[7].Description}/>
+            Array.isArray(videos) && videos.length >= 5 && <SubBox title={videos[4].VideoName} text={videos[4].Description} videoKey={videos[4].VideoKey} />
           }
           {
-            Array.isArray(videos) && videos.length >= 9 && <SubBox title={videos[8].VideoName} text={videos[8].Description}/>
+            Array.isArray(videos) && videos.length >= 6 && <SubBox title={videos[5].VideoName} text={videos[5].Description} videoKey={videos[5].VideoKey} />
           }
           {
-            Array.isArray(videos) && videos.length >= 10 && <SubBox title={videos[9].VideoName} text={videos[9].Description}/>
+            Array.isArray(videos) && videos.length >= 7 && <SubBox title={videos[6].VideoName} text={videos[6].Description} videoKey={videos[6].VideoKey} />
+          }
+        </div>
+        <div className='row'>
+          {
+            Array.isArray(videos) && videos.length >= 8 && <SubBox title={videos[7].VideoName} text={videos[7].Description} videoKey={videos[7].VideoKey} />
+          }
+          {
+            Array.isArray(videos) && videos.length >= 9 && <SubBox title={videos[8].VideoName} text={videos[8].Description} videoKey={videos[8].VideoKey} />
+          }
+          {
+            Array.isArray(videos) && videos.length >= 10 && <SubBox title={videos[9].VideoName} text={videos[9].Description} videoKey={videos[9].VideoKey} />
           }
         </div>
       </div>
