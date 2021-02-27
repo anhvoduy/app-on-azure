@@ -1,19 +1,17 @@
 import {    
     INCREMENT, DECREMENT,
     START_LOADING, STOP_LOADING,
-    GET_ORDER_PENDING, GET_ORDER_COMPLETED
-} from '../utils/constants';
+    GET_VIDEO_PENDING, GET_VIDEO_COMPLETED, GET_VIDEO_FAILED
+} from '../common';
 
 export const INITIAL_STATE = {
     count: 0,
-    isLoading: false,
-    selectedView: PANEL_VIEW.PENDING,
-    pendingOrders: [],
-    completedOrders: [],
-    orderDetail: {}
+    isLoading: false,    
+    videoList: [],    
+    videoDetail: {}
 };
 
-const orderReducer = function(state = INITIAL_STATE, { type, payload }) {
+const videoReducer = function(state = INITIAL_STATE, { type, payload }) {
     switch (type) {
     case START_LOADING:
         return {
@@ -24,35 +22,22 @@ const orderReducer = function(state = INITIAL_STATE, { type, payload }) {
         return {
             ...state,
             isLoading: false
-        }
-    case SELECTED_PANEL_VIEW:
-        return {
-            ...state,
-            selectedView: payload
-        }
-    case GET_ORDER_PENDING:
+        }    
+    case GET_VIDEO_PENDING:
         return {
             ...state, 
-            pendingOrders: payload
+            videoList: []
         };
-    case GET_ORDER_COMPLETED:
+    case GET_VIDEO_COMPLETED:
         return {
             ...state,
-            completedOrders: payload
+            videoList: payload.videoList
         };
-    case GET_ORDER_DETAIL_BY_ID:
+    case GET_VIDEO_FAILED:
         return {
             ...state,
-            orderDetail: payload
-        };
-    case SET_ORDER_DETAIL_ITEM_CHECKED:
-        return {
-            ...state,
-            orderDetail: {
-                ...state.orderDetail,
-                products: payload
-            }
-        }
+            videoList: payload.err.message
+        }       
     case INCREMENT:
         return {
             ...state,
