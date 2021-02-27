@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
 ### Step to get sharepoint token
 link https://www.c-sharpcorner.com/blogs/setting-for-sharepoint-online-to-accessible-from-external-environment
 
