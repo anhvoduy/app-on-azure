@@ -11,6 +11,9 @@ const Row = function({ index, rowItem }) {
       <td className='row-btn'>
         <Link to={`/video/${rowItem.VideoKey}`}>Edit</Link>
       </td>
+      <td className='row-btn'>
+        <Link to={`/player/${rowItem.VideoKey}`}>Play</Link>
+      </td>
     </tr>
   );
 }

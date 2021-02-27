@@ -8,6 +8,7 @@ const Header = function() {
         <th>Name</th>
         <th>Description</th>
         <th>Edit</th>
+        <th>Play</th>
       </tr>
     </thead>
   );
