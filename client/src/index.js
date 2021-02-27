@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
 import './styles/index.scss';
 import Routes from './routes';
@@ -7,10 +8,13 @@ import Routes from './routes';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
+import configureStore from './store';
+const store = new configureStore();
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <Routes />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
