@@ -1,0 +1,4 @@
+node_modules/
+coins/node_modules/
+prince/node_modules/
+npm-debug.log
