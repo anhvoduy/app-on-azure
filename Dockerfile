@@ -15,5 +15,8 @@ RUN npm ci --only=production
 # Bundle app source
 COPY . .
 
+# Set environment
+NODE_ENV="production"
+
 EXPOSE 3000
 CMD [ "npm", "start" ]

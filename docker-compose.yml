@@ -1,7 +1,7 @@
 version: '3'
 services:  
   web:
-    container_name: demo_gold
+    container_name: demo_pnp
     build: ./
     ports:
       - "8080:3000"
