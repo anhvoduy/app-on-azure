@@ -50,8 +50,7 @@ Supports only read access.
 # User Profiles
 Supports Read, Write, Manage and FullControl rights.
 
-"
 <AppPermissionRequests AllowAppOnlyPolicy="true">  
    <AppPermissionRequest Scope="http://sharepoint/social/tenant" Right="Read" />
 </AppPermissionRequests>
-"
+
