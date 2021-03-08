@@ -53,3 +53,14 @@ Supports Read, Write, Manage and FullControl rights.
 <AppPermissionRequests AllowAppOnlyPolicy="true">  
    <AppPermissionRequest Scope="http://sharepoint/social/tenant" Right="Read" />
 </AppPermissionRequests>
+
+### Docker Command & Build
+https://docs.docker.com/docker-hub/repos/
+- build & push to docker repository:
+docker build -t duyanh2005/eth:demo-pnp-107 .
+docker tag 7958423b5c8e duyanh2005/eth:demo-pnp-107
+docker push duyanh2005/eth:demo-pnp-107
+
+- login:
+docker login -u duyanh2005 -p e00d686f-bb31-48c7-966c-afc3ec4e4099 docker.io
+docker login https://hub.docker.com -u duyanh2005 -p e00d686f-bb31-48c7-966c-afc3ec4e4099
