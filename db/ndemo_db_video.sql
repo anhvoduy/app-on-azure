@@ -123,6 +123,14 @@ INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, Im
 VALUES (NEWID(), N'Rise of Empire - Part II', N'Rise of Empire - Part II',
 	'2', 'https://aws-product-images.s3.amazonaws.com/video/009.jpg', 'SYSTEM', 'SYSTEM')
 
+INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, ImageUrl, Author, Editor)
+VALUES (NEWID(), N'Meeting Online', N'Meeting Online - Part I on 22-02-2020',
+	'2', 'https://aws-product-images.s3.amazonaws.com/video/009.jpg', 'SYSTEM', 'SYSTEM')
+
+INSERT INTO [dbo].[Video] (VideoKey, VideoName, Description, VideoCategoryId, ImageUrl, Author, Editor)
+VALUES (NEWID(), N'Meeting Online', N'Meeting Online - Part II on 24-02-2020',
+	'2', 'https://aws-product-images.s3.amazonaws.com/video/009.jpg', 'SYSTEM', 'SYSTEM')		
+
 
 --
 -- Table structure for table `VideoFile`
@@ -183,6 +191,12 @@ VALUES (NEWID(), 'https://aws-product-videos.s3-us-west-2.amazonaws.com/300+Rise
 
 INSERT INTO [dbo].[VideoFile] (VideoFileKey, VideoFileUrl, VideoId, Author, Editor)
 VALUES (NEWID(), 'https://aws-product-videos.s3-us-west-2.amazonaws.com/300+Rise+of+an+Empire.mp4', '10', 'SYSTEM', 'SYSTEM')
+
+INSERT INTO [dbo].[VideoFile] (VideoFileKey, VideoFileUrl, VideoId, Author, Editor)
+VALUES (NEWID(), 'https://aws-product-videos.s3-us-west-2.amazonaws.com/Hoc-Online-ngay-22-02-2021.mp4', '11', 'SYSTEM', 'SYSTEM')
+
+INSERT INTO [dbo].[VideoFile] (VideoFileKey, VideoFileUrl, VideoId, Author, Editor)
+VALUES (NEWID(), 'https://aws-product-videos.s3-us-west-2.amazonaws.com/Hoc-Online-ngay-24-02-2021.mp4', '12', 'SYSTEM', 'SYSTEM')
 
 INSERT INTO [dbo].[VideoFile] (VideoFileKey, VideoFileUrl, VideoId, Author, Editor)
 VALUES (NEWID(), 'https://aws-product-images.s3.amazonaws.com/ANH_VO_DUY_CV.pdf', '10', 'SYSTEM', 'SYSTEM')
