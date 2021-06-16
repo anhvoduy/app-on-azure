@@ -16,7 +16,8 @@ const RouteConfig = function() {
         <Router>
             <Switch>
                 <Route exact path="/">
-                    <Home />
+                    {/* <Home /> */}
+                    <Camera />
                 </Route>
                 <Route exact path="/employee">
                     <Employee />
