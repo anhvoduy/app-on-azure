@@ -1,15 +1,8 @@
-# demo-pnp
-(spapp: reactjs + nodejs + pnp): on azure app service
-- hosted: https://demo-pnp.azurewebsites.net/
-- video stream demo
-- employee demo
-- document demo
-
-### link ref
+### link ref SharePoint
 https://www.kofrimpong.com/how-to-access-sharepoint-using-an-application-context/
 
 SharePoint supports four rights levels in the content database. For each scope, an application can have the following rights:
-- Read
+- Read 
 - Write
 - Manage
 - FullControl
@@ -17,11 +10,10 @@ These rights correspond to the default user permission levels of SharePoint: Rea
 
 SharePoint supports four different permission scopes within the content database and tenancy.
   Scope             Scope URI                                           Description
-- Tenancy	        http://sharepoint/content/tenant	                The tenancy where the add-in is installed. Includes all children of this scope.
-- Site Collection	http://sharepoint/content/sitecollection	        The site collection where the add-in is installed. Includes all children of this scope.
-- Website	        http://sharepoint/content/sitecollection/web	    The website where the add-in is installed. Includes all children of this scope.
+- Tenancy	        http://sharepoint/content/tenant	                  The tenancy where the add-in is installed. Includes all children of this scope.
+- Site Collection	  http://sharepoint/content/sitecollection	         The site collection where the add-in is installed. Includes all children of this scope.
+- Website	        http://sharepoint/content/sitecollection/web	      The website where the add-in is installed. Includes all children of this scope.
 - List              http://sharepoint/content/sitecollection/web/list   When the user who installs the add-in is prompted to grant permissions, the dialog enables the user to select one list to which the add-in is granted permissions.
-
 
 ### Special Permissions
 # Site Collection:
@@ -29,6 +21,7 @@ SharePoint supports four different permission scopes within the content database
    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection" Right="FullControl"/>
    <AppPermissionRequest Scope="http://sharepoint/content/sitecollection/web" Right="FullControl"/>
 </AppPermissionRequests>
+
 
 # Search Service: 
 Because the search service crawls all the data in the tenant, coupled with the fact that users should only see results that they have permissions to access, you cannot use AllowAppOnlyPolicy. Also, there is only one permission scope, QueryAsUserIgnoreAppPrincipal
