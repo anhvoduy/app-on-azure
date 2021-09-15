@@ -24,11 +24,11 @@ const Container = function() {
       throw err;
     }
   }, []);
-  
+
   useEffect(() => {
     queryData(50, 0);
   },[queryData]);
-      
+
   return (
     <div className='wrap home-page'>
       <Header />
