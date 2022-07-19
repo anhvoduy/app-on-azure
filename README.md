@@ -1,11 +1,17 @@
 # demo-pnp
 (spapp: reactjs + nodejs + pnp): on azure app service
 - hosted: https://demo-pnp.azurewebsites.net/
+- video call demo
 - video stream demo
 - employee demo
 - document demo
 
-### link ref
+### app video call
+- domain: https://www3.laptrinh365.com
+- opentok: https://tokbox.com/developer/guides/basics/
+- agora: https://docs.agora.io/en/Video/product_video?platform=React%20Native
+
+### link ref sharepoint
 https://www.kofrimpong.com/how-to-access-sharepoint-using-an-application-context/
 
 SharePoint supports four rights levels in the content database. For each scope, an application can have the following rights:
