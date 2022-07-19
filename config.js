@@ -12,8 +12,8 @@ const db_ndemo = {
     },
   },
   pool: {
-    min: 0,
-    max: 50 
+    min: 1,
+    max: 10 
   }
 };
 
