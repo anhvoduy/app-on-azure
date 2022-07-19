@@ -1,6 +1,7 @@
 # demo-pnp
 (spapp: reactjs + nodejs + pnp): on azure app service
-- hosted: https://demo-pnp.azurewebsites.net/
+- host: https://demo-pnp.azurewebsites.net/
+- api : https://demo-pnp.azurewebsites.net/v1/api/status/
 - video call demo
 - video stream demo
 - employee demo
