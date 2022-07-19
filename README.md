@@ -1,11 +1,12 @@
 # demo-pnp
 (spapp: reactjs + nodejs + pnp): on azure app service
-- host: https://demo-pnp.azurewebsites.net/
-- api : https://demo-pnp.azurewebsites.net/v1/api/status/
-- video call demo
-- video stream demo
-- employee demo
-- document demo
+- web: https://demo-pnp.azurewebsites.net/
+- api: https://demo-pnp.azurewebsites.net/v1/api/status/
+- demo video call
+- demo video stream
+- mobile app chatting
+- employee information
+- document management
 
 ### app video call
 - domain: https://www3.laptrinh365.com
