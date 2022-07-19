@@ -1,9 +1,9 @@
 {
-  "name": "demo-pnp",
-  "version": "0.0.2",
-  "description": "demo pnp application",
+  "name": "pnp",
+  "version": "0.1.1",
+  "description": "app-pnp",
   "author": "devinsg",
-  "email": "vnonline365@gmail.com",
+  "email": "duyanh2005@gmail.com",
   "license": "MIT",
   "engines": {
     "node": "12.20.0",
