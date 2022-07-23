@@ -17,6 +17,13 @@ const REQUEST_OK = 200;
 const REQUEST_SUCCESS = 201;
 const REQUEST_FAILED = 500;
 
+const aws_s3_files = [
+    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/mov_bbb.mp4' },
+    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/loi-day-khong-tu.mp4' },
+    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/The+story+about+Archimedes.mp4' },
+    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/hien-tai-la-nguyen-khi-quoc-gia.mp4' },
+];
+
 module.exports = {
     REQUEST_OK,
     REQUEST_SUCCESS,
