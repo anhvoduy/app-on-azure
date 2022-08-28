@@ -7,8 +7,7 @@
 - employee information (SQL Server)
 - document management (SharePoint + PnP)
 
-### video call: stacks
-- domain: https://www3.laptrinh365.com
+### web RTC stacks
 - opentok: https://tokbox.com/developer/guides/basics/
 - agora: https://docs.agora.io/en/Video/product_video?platform=React%20Native
 
