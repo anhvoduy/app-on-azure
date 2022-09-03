@@ -19,16 +19,16 @@ const REQUEST_FAILED = 500;
 
 const aws_s3_files = [
     { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/mov_bbb.mp4' },
-    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/loi-day-khong-tu.mp4' },
-    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/300+Rise+of+an+Empire.mp4' },
-    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/The+story+about+Archimedes.mp4' },
-    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/Hanging-Gardens-of-Babylon.mp4' },
-    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/1200-Essential-Words-for-TOEIC.mp4' },
-    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/de-men-phieu-luu-ky.mp4' },
-    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/hien-tai-la-nguyen-khi-quoc-gia.mp4' },    
     { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/01-Abraham-Lincoln.mp4' },
     { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/02-Benjamin-Franklin.mp4' },
     { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/03-Heinrich-Schlieman.mp4' },
+    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/1200-Essential-Words-for-TOEIC.mp4' },
+    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/300+Rise+of+an+Empire.mp4' },
+    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/de-men-phieu-luu-ky.mp4' },
+    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/Hanging-Gardens-of-Babylon.mp4' },
+    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/hien-tai-la-nguyen-khi-quoc-gia.mp4' },
+    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/loi-day-khong-tu.mp4' },
+    { url: 'https://aws-product-videos.s3.us-west-2.amazonaws.com/The+story+about+Archimedes.mp4' },
 ];
 
 module.exports = {
